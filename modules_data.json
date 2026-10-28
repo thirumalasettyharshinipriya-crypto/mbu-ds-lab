@@ -1,0 +1,29 @@
+{
+    "DS": [
+        {
+            "id": "53f41007782e48a2b29606ad55e273a7",
+            "title": "MODULE-1",
+            "unit": "1",
+            "filename": "saivemula_projrct.pdf",
+            "path": "pdfs/DS/8b5ed16e_saivemula_projrct.pdf"
+        }
+    ],
+    "IoT": [
+        {
+            "id": "4462294e014e4012a2b67809965370fa",
+            "title": "IOT",
+            "unit": "1",
+            "filename": "IoTModule1Notes.pdf",
+            "path": "pdfs/IoT/d02e4d64_IoTModule1Notes.pdf"
+        }
+    ],
+    "CAO": [
+        {
+            "id": "253551d728084bea8d911ec7b5f23544",
+            "title": "module-1",
+            "unit": "1",
+            "filename": "ModuleI_1.pdf",
+            "path": "pdfs/CAO/8f29f915_ModuleI_1.pdf"
+        }
+    ]
+}

@@ -1,0 +1,288 @@
+ 
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="library-home">
+
+    <!-- HERO SECTION -->
+    <section class="library-hero">
+        <div class="hero-text">
+            <span class="hero-badge">MOHAN BABU UNIVERSITY • DS LAB</span>
+
+            <h1>
+                Your Knowledge.<br>
+                <span>Your Digital Library.</span>
+            </h1>
+
+            <p>
+                Discover academic notes, subject modules, laboratory experiments,
+                and learning resources — all in one place.
+            </p>
+
+            <div class="hero-actions">
+                <a href="/modules" class="hero-primary-btn">
+                    Explore Library <span>→</span>
+                </a>
+
+                <a href="/experiments" class="hero-secondary-btn">
+                    View Lab Experiments
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>05</strong>
+                    <span>Subject Categories</span>
+                </div>
+                <div>
+                    <strong>PDF</strong>
+                    <span>Study Materials</span>
+                </div>
+                <div>
+                    <strong>DS</strong>
+                    <span>Digital Laboratory</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-decoration decoration-one"></div>
+            <div class="hero-decoration decoration-two"></div>
+
+            <div class="library-illustration">
+                <div class="book book-one">DS</div>
+                <div class="book book-two">AI</div>
+                <div class="book book-three">ML</div>
+                <div class="book book-four">PY</div>
+            </div>
+
+            <div class="floating-library-card">
+                <span class="floating-icon">📚</span>
+                <div>
+                    <strong>Learning Resources</strong>
+                    <p>Learn • Practice • Explore</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- STUDENT PROFILE CARD -->
+<section class="student-profile-section">
+
+    <div class="student-profile-card">
+
+        <div class="student-profile-header">
+            <span>STUDENT PROFILE</span>
+
+            <a href="/profile" class="edit-profile-btn">
+                ✎ Edit Profile
+            </a>
+        </div>
+
+        <div class="student-profile-content">
+
+            <img
+                src="{{ url_for('static', filename=image_name) }}"
+                alt="Student Photo"
+                class="student-profile-photo"
+            >
+
+            <div class="student-profile-details">
+
+                <div class="profile-detail-row">
+                    <span>Name</span>
+                    <strong>{{ student.get('name', 'Student Name') or 'Student Name' }}</strong>
+                </div>
+
+                <div class="profile-detail-row">
+                    <span>Register No</span>
+                    <strong>{{ student.get('roll_number', 'Not Updated') or 'Not Updated' }}</strong>
+                </div>
+
+                <div class="profile-detail-row">
+                    <span>Section</span>
+                    <strong>{{ student.get('section', 'DS-3') }}</strong>
+                </div>
+
+                <div class="profile-detail-row">
+                    <span>Branch</span>
+                    <strong>{{ student.get('branch', 'Data Science') }}</strong>
+                </div>
+
+                <div class="profile-detail-row">
+                    <span>Faculty</span>
+                    <strong>{{ student.get('faculty', 'Not Updated') }}</strong>
+                </div>
+
+                <div class="profile-detail-row">
+                    <span>GitHub Repo</span>
+                    <strong>
+                        <a href="{{ student.get('github', '#') }}" target="_blank">
+                            View Repository →
+                        </a>
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- SEARCH -->
+    <section class="library-search-section">
+        <div class="library-search-heading">
+            <div>
+                <span class="small-label">FIND YOUR MATERIAL</span>
+                <h2>What do you want to learn today?</h2>
+            </div>
+        </div>
+
+        <div class="library-search-box">
+            <span class="search-icon">⌕</span>
+            <input
+                type="search"
+                id="librarySearch"
+                placeholder="Search subjects, modules, resources..."
+                aria-label="Search library"
+            >
+            <button type="button" id="searchButton">Search</button>
+        </div>
+
+        <p class="search-help">
+            Try searching: Data Science, Python, IoT, PDF notes...
+        </p>
+    </section>
+
+    <!-- SUBJECT CATEGORIES -->
+    <section class="library-section" id="subjects">
+        <div class="library-section-heading">
+            <div>
+                <span class="small-label">BROWSE BY SUBJECT</span>
+                <h2>Explore Categories</h2>
+                <p>Choose a subject to access its study materials.</p>
+            </div>
+
+            <a href="/modules" class="section-view-all">View all modules →</a>
+        </div>
+
+        <div class="library-category-grid">
+
+            <a href="/modules" class="library-category-card" data-search="data science ds">
+                <div class="category-icon category-blue">📊</div>
+                <span class="category-code">DS</span>
+                <h3>Data Science</h3>
+                <p>Data analysis, visualization, and machine learning fundamentals.</p>
+                <span class="category-link">Explore subject →</span>
+            </a>
+
+            <a href="/modules" class="library-category-card" data-search="lrre">
+                <div class="category-icon category-purple">📐</div>
+                <span class="category-code">LRRE</span>
+                <h3>LRRE</h3>
+                <p>Subject notes and academic learning materials.</p>
+                <span class="category-link">Explore subject →</span>
+            </a>
+
+            <a href="/modules" class="library-category-card" data-search="crdt">
+                <div class="category-icon category-orange">💻</div>
+                <span class="category-code">CRDT</span>
+                <h3>CRDT</h3>
+                <p>Course resources, notes, and study modules.</p>
+                <span class="category-link">Explore subject →</span>
+            </a>
+
+            <a href="/modules" class="library-category-card" data-search="cao computer architecture">
+                <div class="category-icon category-green">🖥️</div>
+                <span class="category-code">CAO</span>
+                <h3>CAO</h3>
+                <p>Computer architecture and organization materials.</p>
+                <span class="category-link">Explore subject →</span>
+            </a>
+
+            <a href="/modules" class="library-category-card" data-search="iot internet of things">
+                <div class="category-icon category-pink">🌐</div>
+                <span class="category-code">IoT</span>
+                <h3>Internet of Things</h3>
+                <p>Explore connected systems and IoT resources.</p>
+                <span class="category-link">Explore subject →</span>
+            </a>
+
+        </div>
+
+        <p id="noSearchResults" class="no-search-results" hidden>
+            No matching categories found. Try another search.
+        </p>
+    </section>
+
+    <!-- QUICK ACCESS -->
+    <section class="library-section">
+        <div class="library-section-heading">
+            <div>
+                <span class="small-label">QUICK ACCESS</span>
+                <h2>Explore the Laboratory</h2>
+                <p>Jump into your learning workspace.</p>
+            </div>
+        </div>
+
+        <div class="library-quick-grid">
+
+            <a href="/modules" class="quick-card">
+                <div class="quick-card-icon">📚</div>
+                <div>
+                    <h3>Study Modules</h3>
+                    <p>Subject-wise modules and PDF notes.</p>
+                </div>
+                <span>→</span>
+            </a>
+
+            <a href="/experiments" class="quick-card">
+                <div class="quick-card-icon">🧪</div>
+                <div>
+                    <h3>Lab Experiments</h3>
+                    <p>Practical experiments and implementations.</p>
+                </div>
+                <span>→</span>
+            </a>
+
+            <a href="/resources" class="quick-card">
+                <div class="quick-card-icon">📄</div>
+                <div>
+                    <h3>PDF Resources</h3>
+                    <p>Browse useful learning resources.</p>
+                </div>
+                <span>→</span>
+            </a>
+
+            <a href="/tools" class="quick-card">
+                <div class="quick-card-icon">⚙️</div>
+                <div>
+                    <h3>Tools & Libraries</h3>
+                    <p>Explore programming tools and libraries.</p>
+                </div>
+                <span>→</span>
+            </a>
+
+            <a href="/assignments" class="quick-card">
+                <div class="quick-card-icon">📝</div>
+                <div>
+            <h3>Assignments</h3>
+            <p>Access academic assignments.</p>
+                </div>
+                <span>→</span>
+            </a>
+
+            <a href="/projects" class="quick-card">
+                <div class="quick-card-icon">🚀</div>
+                <div>
+                    <h3>Projects</h3>
+                    <p>Explore student project work.</p>
+                </div>
+                <span>→</span>
+            </a>
+
+        </div>
+    </section>
+{% endblock %}

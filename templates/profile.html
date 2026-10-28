@@ -1,0 +1,170 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1>🎓 Student ID Card</h1>
+
+    <p>Your digital student profile at Mohan Babu University.</p>
+
+    <div class="card profile-card">
+
+        <!-- PROFILE PICTURE -->
+
+        <div class="profile-image-section">
+
+            <img
+                id="profilePreview"
+                src="{{ url_for('static', filename=image_name) }}"
+                alt="Student Profile Picture"
+                class="profile-picture"
+            >
+
+            <!-- PROFILE FORM -->
+
+            <form
+                method="POST"
+                enctype="multipart/form-data"
+                id="profileForm"
+            >
+
+                <label
+                    for="profileImage"
+                    class="upload-button"
+                >
+                    Choose Profile Picture
+                </label>
+
+                <input
+                    type="file"
+                    id="profileImage"
+                    name="profile_image"
+                    accept="image/jpeg,image/png,image/webp"
+                    onchange="previewProfileImage(event)"
+                >
+
+                <!-- STUDENT DETAILS -->
+
+                <div class="profile-details">
+
+                    <h2>Student Information</h2>
+
+                    <label for="studentName">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        name="name"
+                        placeholder="Enter your name"
+                        value="{{ student.name }}"
+                    >
+
+                    <label for="studentId">
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        name="roll_number"
+                        placeholder="Enter your student ID"
+                        value="{{ student.roll_number }}"
+                    >
+
+                    <label for="degree">
+                        Degree
+                    </label>
+
+                    <input
+                        type="text"
+                        id="degree"
+                        name="branch"
+                        value="{{ student.branch }}"
+                    >
+
+                    <label for="university">
+                        University
+                    </label>
+
+                    <input
+                        type="text"
+                        id="university"
+                        value="Mohan Babu University"
+                        readonly
+                    >
+
+                    <label for="batch">
+                        Batch
+                    </label>
+
+                    <input
+                        type="text"
+                        id="batch"
+                        name="batch"
+                        value="{{ student.batch }}"
+                    >
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        value="{{ student.email }}"
+                    >
+
+                    <label for="phone">
+                        Phone
+                    </label>
+
+                    <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        value="{{ student.phone }}"
+                    >
+
+                    <button type="submit">
+                        Save Profile
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+// PROFILE IMAGE PREVIEW
+
+function previewProfileImage(event) {
+
+    const image = document.getElementById("profilePreview");
+
+    const file = event.target.files[0];
+
+    if (file) {
+
+        image.src = URL.createObjectURL(file);
+
+    }
+
+}
+
+</script>
+
+{% endblock %}

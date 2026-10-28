@@ -1,0 +1,168 @@
+{
+    "assignments": [
+        {
+            "id": "99f7fd8dfc5c41ef98f604011863b785",
+            "card_name": "Data Science",
+            "original_filename": "DS_Python_Data_Analysis_Assignment.pdf",
+            "filename": "8d86c9cc4d4341aca3e22a3534c7f6c5_DS_Python_Data_Analysis_Assignment.pdf"
+        },
+        {
+            "id": "02e8b8b6e98b4073b16447f9a555956f",
+            "card_name": "LRRE",
+            "original_filename": "LRRE_Linear_Regression_Assignment.pdf",
+            "filename": "6c67447f2ee843f3aa47e54af68c7cab_LRRE_Linear_Regression_Assignment.pdf"
+        },
+        {
+            "id": "7c6a659fc7c14edf994e0e791695fc17",
+            "card_name": "CRDT",
+            "original_filename": "CRDT_Data_Tools_Assignment.pdf",
+            "filename": "1aad6779ce7248c3ba879ff9d5851125_CRDT_Data_Tools_Assignment.pdf"
+        },
+        {
+            "id": "c35d833b46834c9c86da6e93afdd09e9",
+            "card_name": "CAO",
+            "original_filename": "CAO_Computer_Architecture_Assignment.pdf",
+            "filename": "3af4d01d41684a5cb62988d70f2f1150_CAO_Computer_Architecture_Assignment.pdf"
+        },
+        {
+            "id": "73deed8cd5004c9ba3856ed40f1baf2a",
+            "card_name": "IoT",
+            "original_filename": "IoT_Smart_Classroom_Assignment.pdf",
+            "filename": "06a06ec2e26d4678a0c41f995741df4e_IoT_Smart_Classroom_Assignment.pdf"
+        }
+    ],
+    "projects": [
+        {
+            "id": "82ca92f1d64940d2bd3b0f88da8d746e",
+            "card_name": "Machine Learning",
+            "original_filename": "main.py",
+            "filename": "4ee63b6a2e9a4e259afad2ee8bf6ee30_main.py"
+        },
+        {
+            "id": "304844d95d0141aea5026492855a4d46",
+            "card_name": "Data Analysis",
+            "original_filename": "analyze.py",
+            "filename": "bdf494f76a4c4bbc968af9dd90437b98_analyze.py"
+        },
+        {
+            "id": "2af3349ace404cec90278ab276ed25d6",
+            "card_name": "Artificial Intelligence",
+            "original_filename": "chatbot.py",
+            "filename": "a96b2f6f82e043f683e255b393762be2_chatbot.py"
+        },
+        {
+            "id": "60ae979f0b6645f783cf69869bd4fa77",
+            "card_name": "IoT",
+            "original_filename": "monitor.py",
+            "filename": "1b4d8035af934ca18eaf06efbcd59106_monitor.py"
+        }
+    ],
+    "tools": [
+        {
+            "id": "494d878fcb2445ff88a4ac555fbcdb5a",
+            "card_name": "Python",
+            "original_filename": "sample_python.py",
+            "filename": "8ab64478d8af4ade9f1a606be3f2c1f9_sample_python.py"
+        },
+        {
+            "id": "37353f0b47004470a391a5860006fa9b",
+            "card_name": "Jupyter Notebook",
+            "original_filename": "sample_jupyter_notebook.ipynb",
+            "filename": "be96e284b17b4ec6b192bb78e34e128e_sample_jupyter_notebook.ipynb"
+        },
+        {
+            "id": "91077e03c9b940d8b22740194a101571",
+            "card_name": "Google Colab",
+            "original_filename": "sample_colab_notebook.ipynb",
+            "filename": "086a85bdc64541368275856675d7322a_sample_colab_notebook.ipynb"
+        },
+        {
+            "id": "838a8f15eb414fd99b2bb9c80b809a0a",
+            "card_name": "NumPy",
+            "original_filename": "sample_numpy.py",
+            "filename": "e5286d00aa4b4cf2bf2d2e1f348cea8e_sample_numpy.py"
+        },
+        {
+            "id": "007a4df487c24d33be1e29f68b613377",
+            "card_name": "Pandas",
+            "original_filename": "sample_pandas.csv",
+            "filename": "f4ba794f3c1e486a958c734b6d21b33a_sample_pandas.csv"
+        },
+        {
+            "id": "e90a83c9223f47d9b3b4ee81689d968e",
+            "card_name": "Matplotlib",
+            "original_filename": "sample_matplotlib.py",
+            "filename": "8d18770b24514d6fa835352663fb9c29_sample_matplotlib.py"
+        }
+    ],
+    "resources": [
+        {
+            "id": "1fc3550d389f4a4ca2c13752dc3784d3",
+            "card_name": "Lecture Notes",
+            "original_filename": "01_Lecture_Notes_Data_Science.pdf",
+            "filename": "17d8d7adc4f04f78bbeb9009be76b720_01_Lecture_Notes_Data_Science.pdf"
+        },
+        {
+            "id": "970bbdb6e83b42c981f2f035fd31a7ab",
+            "card_name": "PDF Materials",
+            "original_filename": "02_PDF_Materials_Data_Cleaning.pdf",
+            "filename": "89211e4202a542bcacdb9282ba2452d2_02_PDF_Materials_Data_Cleaning.pdf"
+        },
+        {
+            "id": "04af9cf32a1242b0907bdd7e3ec2e6c7",
+            "card_name": "Study Guides",
+            "original_filename": "03_Study_Guide_Data_Science_Fundamentals.pdf",
+            "filename": "74adb20c9e1d487bbbb19894ff5a83d1_03_Study_Guide_Data_Science_Fundamentals.pdf"
+        },
+        {
+            "id": "5247fe96ecff4910bf8470ef389d7fbd",
+            "card_name": "Video Tutorials",
+            "original_filename": "04_Video_Tutorials_Data_Analysis_Watch_Guide.pdf",
+            "filename": "45ee965c55654d5b8029f8f165cac598_04_Video_Tutorials_Data_Analysis_Watch_Guide.pdf"
+        },
+        {
+            "id": "842018e4d031479ea4e1a683b38d89f3",
+            "card_name": "Reference Books",
+            "original_filename": "05_Reference_Books_Data_Science.pdf",
+            "filename": "81181490a8964950970eb6e8c6922ca2_05_Reference_Books_Data_Science.pdf"
+        },
+        {
+            "id": "86930329d7314a1980d997652d0ebffc",
+            "card_name": "Practice Materials",
+            "original_filename": "06_Practice_Materials_Data_Science.pdf",
+            "filename": "a2ad70f624e34ff3a4ee7e330e46fe51_06_Practice_Materials_Data_Science.pdf"
+        }
+    ],
+    "experiments": [
+        {
+            "id": "9dc98681524340e2bea542ca14706d38",
+            "card_name": "Python Basics",
+            "original_filename": "Lab_01_Python_Basics.pdf",
+            "filename": "e971c139858f4653a12db66c820e1f7d_Lab_01_Python_Basics.pdf"
+        },
+        {
+            "id": "c5fa4d94fd964eeab5fab351b470e99e",
+            "card_name": "Data Analysis",
+            "original_filename": "Lab_02_Data_Analysis_Pandas_NumPy.pdf",
+            "filename": "1f8e007c0caf4cccbf7c135ad5e4420b_Lab_02_Data_Analysis_Pandas_NumPy.pdf"
+        },
+        {
+            "id": "8c334aa9a5e447b890843c605ecfe06c",
+            "card_name": "Data Visualization",
+            "original_filename": "Lab_03_Data_Visualization_Matplotlib.pdf",
+            "filename": "89dd540a783f4e2e97b2f6eb95a50130_Lab_03_Data_Visualization_Matplotlib.pdf"
+        },
+        {
+            "id": "b46e92e69f7043a2941ee61436236d69",
+            "card_name": "Machine Learning",
+            "original_filename": "Lab_04_Basic_Machine_Learning.pdf",
+            "filename": "024c94619c4743dc9b54328c83a88c91_Lab_04_Basic_Machine_Learning.pdf"
+        },
+        {
+            "id": "c9b5b86d0d4746f7ae46c57b13e35b6d",
+            "card_name": "SQL",
+            "original_filename": "Lab_05_SQL_Basics.pdf",
+            "filename": "ddc3cb6b642848689c61bc71ff691a5c_Lab_05_SQL_Basics.pdf"
+        }
+    ]
+}

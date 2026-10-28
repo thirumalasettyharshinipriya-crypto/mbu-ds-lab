@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MBU DS LAB | Digital Library</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+
+        <a href="/" class="brand">
+
+            <img src="{{ url_for('static', filename='mbu-logo.jfif') }}"
+                 alt="MBU University Logo">
+
+            <div class="brand-text">
+                <h2>DS LAB</h2>
+                <p>DATA SCIENCE LABORATORY</p>
+            </div>
+
+        </a>
+
+        <!-- NAVIGATION -->
+        <nav class="main-navigation">
+
+            <ul class="navigation-links">
+
+                <li><a href="/">Home</a></li>
+                <li><a href="/modules">Library</a></li>
+                <li><a href="/assignments">Assignments</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/experiments">Experiments</a></li>
+                <li><a href="/tools">Tools</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li><a href="/profile">Profile</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <p>
+            © Mohan Babu University • Data Science Laboratory
+        </p>
+
+        <p>
+            Learn • Practice • Innovate
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

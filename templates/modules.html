@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="modules-page">
+
+    <!-- Page heading -->
+    <div class="modules-hero">
+        <div>
+            <span class="modules-label">LEARNING RESOURCE CENTER</span>
+            <h1>Subject <span>Modules</span></h1>
+            <p>Explore, manage, and access your Data Science learning materials.</p>
+        </div>
+
+        <div class="modules-hero-icon">📚</div>
+    </div>
+
+    <!-- Summary -->
+    <div class="modules-summary">
+        <div class="summary-card">
+            <span class="summary-icon">📘</span>
+            <div>
+                <h3>{{ subjects|length }}</h3>
+                <p>Subjects</p>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <span class="summary-icon">📄</span>
+            <div>
+                <h3>{{ total_pdfs }}</h3>
+                <p>PDF Modules</p>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <span class="summary-icon">🎓</span>
+            <div>
+                <h3>DS LAB</h3>
+                <p>Learning Resources</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload panel -->
+    <div class="modules-upload-card">
+
+        <div class="upload-heading">
+            <div>
+                <h2>Upload New Module</h2>
+                <p>Add a PDF module to its respective subject.</p>
+            </div>
+            <span class="upload-icon">⬆</span>
+        </div>
+
+        {% if upload_message %}
+        <div class="upload-message">{{ upload_message }}</div>
+        {% endif %}
+
+        <form method="POST"
+              enctype="multipart/form-data"
+              class="modules-upload-form">
+
+            <div class="form-group">
+                <label for="subject">Select Subject</label>
+
+                <select name="subject" id="subject" required>
+                    <option value="">Choose subject</option>
+
+                    {% for subject in subjects %}
+                    <option value="{{ subject }}">
+                        {{ subject }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="module_title">Module Title</label>
+
+                <input
+                    type="text"
+                    name="module_title"
+                    id="module_title"
+                    placeholder="Example: Introduction to Python"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="unit_name">Unit / Chapter</label>
+
+                <input
+                    type="text"
+                    name="unit_name"
+                    id="unit_name"
+                    placeholder="Example: Unit 1"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="pdf_file">Select PDF File</label>
+
+                <input
+                    type="file"
+                    name="pdf_file"
+                    id="pdf_file"
+                    accept=".pdf,application/pdf"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="modules-upload-btn">
+                <span>＋</span> Upload Module
+            </button>
+
+        </form>
+
+        <p class="upload-note">PDF files only. Maximum file size: 20 MB.</p>
+
+    </div>
+
+    <!-- Subject filter -->
+    <div class="modules-library-heading">
+        <div>
+            <span class="modules-label">YOUR LIBRARY</span>
+            <h2>Browse by Subject</h2>
+        </div>
+    </div>
+
+    <div class="subject-grid">
+
+        {% for subject in subjects %}
+
+        <div class="subject-module-card">
+
+            <div class="subject-card-top">
+                <div class="subject-icon">
+                    {% if subject == "DS" %}📊
+                    {% elif subject == "LRRE" %}📈
+                    {% elif subject == "CRDT" %}🗄️
+                    {% elif subject == "CAO" %}💻
+                    {% else %}🌐
+                    {% endif %}
+                </div>
+
+                <span class="subject-count">
+                    {{ modules_data[subject]|length }} PDFs
+                </span>
+            </div>
+
+            <h3>{{ subject }}</h3>
+
+            <p class="subject-description">
+                {% if subject == "DS" %}
+                    Data Structures
+                {% elif subject == "LRRE" %}
+                    Linear Regression and Related Experiments
+                {% elif subject == "CRDT" %}
+                    Course Learning Resources
+                {% elif subject == "CAO" %}
+                    Computer Architecture and Organization
+                {% else %}
+                    Internet of Things
+                {% endif %}
+            </p>
+
+            <div class="subject-pdf-list">
+
+                {% if modules_data[subject] %}
+
+                    {% for pdf in modules_data[subject] %}
+
+                    <div class="module-pdf-item">
+
+                        <div class="pdf-icon">PDF</div>
+
+                        <div class="pdf-details">
+                            <h4>{{ pdf.title }}</h4>
+                            <p>{{ pdf.unit }}</p>
+                        </div>
+
+                        <div class="pdf-actions">
+
+                            <a
+                                href="{{ url_for('static', filename=pdf.path) }}"
+                                target="_blank"
+                                rel="noopener"
+                                class="pdf-view-btn"
+                            >
+                                View
+                            </a>
+
+                            <a
+                                href="{{ url_for('static', filename=pdf.path) }}"
+                                download="{{ pdf.filename }}"
+                                class="pdf-download-btn"
+                            >
+                                ↓
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <div class="empty-subject">
+                        <span>📂</span>
+                        <p>No modules uploaded yet.</p>
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

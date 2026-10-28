@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="modern-page">
+
+    <!-- Page Heading -->
+    <div class="modern-heading">
+        <h1>Assignments</h1>
+        <p>Manage your academic assignments and deadlines.</p>
+    </div>
+
+    <!-- Upload Assignment -->
+    <div class="modern-card assignment-upload-card">
+
+        <h2>Upload Assignment</h2>
+
+        <form method="POST"
+              enctype="multipart/form-data"
+              class="modern-upload-form">
+
+            <div class="assignment-form-field">
+
+                <label for="card_name">Select Subject</label>
+
+                <select name="card_name"
+                        id="card_name"
+                        required>
+
+                    <option value="">Choose Subject</option>
+
+                    {% for category in categories %}
+                    <option value="{{ category }}">
+                        {{ category }}
+                    </option>
+                    {% endfor %}
+
+                </select>
+
+            </div>
+
+            <div class="assignment-form-field">
+
+                <label for="file">Choose Assignment File</label>
+
+                <input type="file"
+                       name="file"
+                       id="file"
+                       required>
+
+            </div>
+
+            <button type="submit"
+                    class="modern-upload-btn">
+                Upload Assignment
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Assignment Subject Cards -->
+    <div class="modern-dashboard assignment-dashboard">
+
+        {% for category in categories %}
+
+        <div class="modern-card assignment-subject-card">
+
+            <div class="assignment-subject-header">
+                <span class="assignment-label">SUBJECT</span>
+                <h2>{{ category }}</h2>
+            </div>
+
+            {% if category == "Data Science" %}
+            <p>Data analysis and machine learning assignments.</p>
+
+            {% elif category == "LRRE" %}
+            <p>Linear Regression and Related Estimators assignments.</p>
+
+            {% elif category == "CRDT" %}
+            <p>Computational Research and Data Tools assignments.</p>
+
+            {% elif category == "CAO" %}
+            <p>Computer Architecture and Organization assignments.</p>
+
+            {% elif category == "IoT" %}
+            <p>Internet of Things assignments.</p>
+            {% endif %}
+
+            <div class="assignment-files-heading">
+                <h3>Uploaded Files</h3>
+            </div>
+
+            {% set subject_files = files | selectattr("card_name", "equalto", category) | list %}
+
+            {% if subject_files %}
+
+            <div class="modern-file-list">
+
+                {% for file in subject_files %}
+
+                <div class="modern-file-row">
+
+                    <div class="modern-file-name">
+                        <span class="assignment-file-icon">📄</span>
+                        <span>{{ file.original_filename }}</span>
+                    </div>
+
+                    <div class="modern-file-actions">
+
+                        <!-- View -->
+                        <a class="modern-action action-view"
+                           href="{{ url_for('uploaded_file',
+                           category='assignments',
+                           filename=file.filename) }}"
+                           target="_blank">
+                            View
+                        </a>
+
+                        <!-- Download -->
+                        <a class="modern-action action-download"
+                           href="{{ url_for('download_uploaded_file',
+                           category='assignments',
+                           filename=file.filename) }}">
+                            Download
+                        </a>
+
+                        <!-- Delete -->
+                        <form method="POST"
+                              action="{{ url_for('delete_assignment_file',
+                              filename=file.filename) }}">
+
+                            <button type="submit"
+                                    class="modern-action action-delete"
+                                    onclick="return confirm('Are you sure you want to delete this assignment?')">
+                                Delete
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            {% else %}
+
+            <div class="modern-empty">
+                No assignments uploaded yet.
+            </div>
+
+            {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
